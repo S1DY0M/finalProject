@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
+    <title>Main Menu</title>
+</head>
+<body>
+    <header>
+        <h1>Main Menu</h1>
+    </header>
+
+    <div class="container">
+        <ul class="menu-list">
+            <li><a href="{{ url_for('reserve_seat') }}" class="menu-link">Reserve a Seat</a></li>
+            <li><a href="{{ url_for('admin_login') }}" class="menu-link">Admin Login</a></li>
+        </ul>
+    </div>
+
+</body>
+</html>
