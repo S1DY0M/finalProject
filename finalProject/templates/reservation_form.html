@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Seat Reservation</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <header>
+        <h1>Reserve Seat</h1>
+    </header>
+
+    <nav class="navigation">
+        <ul>
+            <li><a href="{{ url_for('main_menu') }}">Main Menu</a></li>
+            <li><a href="{{ url_for('reserve_seat') }}">Reserve Seat</a></li>
+            <li><a href="{{ url_for('admin_login') }}">Admin Login</a></li>
+        </ul>
+    </nav>
+
+    <div class="container">
+        <form method="POST" action="{{ url_for('reserve_seat') }}" class="reservation-form">
+
+            {% if error %}
+            <p class="error-msg">{{ error }}</p>
+            {% endif %}
+
+            <div class="form-group">
+                <label for="first_name">First Name:</label>
+                <input type="text" id="first_name" name="first_name" required>
+            </div>
+            <div class="form-group">
+                <label for="last_name">Last Name:</label>
+                <input type="text" id="last_name" name="last_name" required>
+            </div>
+            <div class="form-group">
+                <label for="seat_row">Seat Row:</label>
+                <select id="seat_row" name="seat_row" required>
+                    {% for row in range(1, 13) %}
+                        <option value="{{ row }}">{{ row }}</option>
+                    {% endfor %}
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="seat_column">Seat Column:</label>
+                <select id="seat_column" name="seat_column" required>
+                    {% for col in range(1, 5) %}
+                        <option value="{{ col }}">{{ col }}</option>
+                    {% endfor %}
+                </select>
+            </div>
+            <button type="submit" class="btn-reserve">Reserve Seat</button>
+        </form>
+
+        <h2>Seat Chart:</h2>
+        <div class="seat-chart">
+            {% for row in range(0, 12) %}
+                {% for col in range(0, 4) %}
+                    {% if is_seat_reserved(row, col) %}
+                        <div class="seat reserved-seat">X</div>
+                    {% else %}
+                        <div class="seat available-seat">O</div>
+                    {% endif %}
+                {% endfor %}
+                <br>
+            {% endfor %}
+        </div>
+
+    </div>
+</body>
+</html>
+
+

@@ -1,0 +1,24 @@
+<!-- reservation_success.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
+    <title>Reservation Success</title>
+</head>
+<body>
+    <h1>Reservation Successful!</h1>
+
+    <nav class="navigation">
+        <ul>
+            <li><a href="{{ url_for('main_menu') }}">Main Menu</a></li>
+            <li><a href="{{ url_for('reserve_seat') }}">Reserve Seat</a></li>
+            <li><a href="{{ url_for('admin_login') }}">Admin Login</a></li>
+        </ul>
+    </nav>
+
+    <p>Your reservation code is: <strong>{{ e_ticket_number }}</strong></p>
+</body>
+</html>

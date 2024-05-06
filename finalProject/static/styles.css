@@ -1,0 +1,177 @@
+/* Reset default margin and padding */
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+
+/* Global styles for links */
+a {
+    text-decoration: none;
+    color: #007bff; /* Blue color for links */
+}
+
+/* Header styles */
+header {
+    background-color: #333; /* Dark background for header */
+    color: #fff;
+    padding: 10px 20px;
+    text-align: center;
+}
+
+/* Basic styling for navigation bar */
+.navigation {
+    background-color: #333;
+}
+
+.navigation ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+.navigation li {
+    float: left;
+}
+
+.navigation a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+/* Change link color on hover */
+.navigation a:hover {
+    background-color: #555;
+}
+
+/* Ensure active link is highlighted */
+.navigation .active {
+    background-color: #555;
+}
+
+/* Main content container */
+.container {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #f8f9fa; /* Light gray background */
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Shadow effect */
+}
+
+.menu-list {
+    list-style: none;
+    padding: 0;
+}
+
+.menu-list li {
+    margin-bottom: 10px;
+}
+
+.menu-list a {
+    display: block;
+    padding: 12px 20px;
+    background-color: #007bff;
+    color: #ffffff;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.menu-list a:hover {
+    background-color: #0056b3;
+}
+
+/* Form styles */
+form {
+    margin-bottom: 20px;
+}
+
+label {
+    font-weight: bold;
+}
+
+input[type="text"],
+input[type="password"],
+input[type="submit"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+input[type="submit"] {
+    background-color: #007bff;
+    color: #fff;
+    cursor: pointer;
+}
+
+/* Style for each row in the seat chart */
+.seat-chart {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+/* Style for each seat */
+.seat {
+    width: 25%; /* 25% width for 4 columns with spacing between */
+    background-color: #ddd; /* Default background color */
+    height: 50px; /* Fixed height */
+    margin-bottom: 10px; /* Spacing between rows */
+    box-sizing: border-box; /* Include padding and border in width calculation */
+    border: 1px solid #888; /* Border for each seat */
+    text-align: center; /* Center text horizontally */
+    line-height: 50px; /* Center text vertically */
+}
+
+
+/* Style for reservation status (e.g., red X) */
+.reservation-status {
+    color: #fff; /* White text color */
+    font-size: 24px; /* Adjust font size */
+    position: absolute; /* Position the X within the seat */
+    top: 50%; /* Center vertically */
+    left: 50%; /* Center horizontally */
+    transform: translate(-50%, -50%); /* Center the X within the seat */
+}
+
+.reserved-seat {
+    color: red;
+    font-weight: bold;
+}
+
+.available-seat {
+    color: green;
+    font-weight: bold;
+}
+
+
+/* Footer styles */
+footer {
+    text-align: center;
+    margin-top: 20px;
+    padding: 10px;
+    background-color: #333;
+    color: #fff;
+}
+
+/* Responsive styles */
+@media (max-width: 600px) {
+    .container {
+        padding: 10px;
+    }
+
+    .seat {
+        width: 30px;
+        height: 30px;
+        line-height: 30px;
+    }
+}

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Admin Dashboard</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <header>
+        <h1>Welcome to Admin Dashboard</h1>
+        <h2>Total Sales: ${{ total_sales }}</h2>
+    </header>
+
+    <nav class="navigation">
+        <ul>
+            <li><a href="{{ url_for('main_menu') }}">Main Menu</a></li>
+            <li><a href="{{ url_for('reserve_seat') }}">Reserve Seat</a></li>
+            <li><a href="{{ url_for('admin_login') }}">Admin Login</a></li>
+        </ul>
+    </nav>
+
+    <h2>Seat Chart:</h2>
+        <div class="seat-chart">
+            {% for row in range(0, 12) %}
+                {% for col in range(0, 4) %}
+                    {% if is_seat_reserved(row, col) %}
+                        <div class="seat reserved-seat">X</div>
+                    {% else %}
+                        <div class="seat available-seat">O</div>
+                    {% endif %}
+                {% endfor %}
+                <br>
+            {% endfor %}
+        </div>
+
+</body>
+</html>
